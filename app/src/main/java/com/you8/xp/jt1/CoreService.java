@@ -164,58 +164,6 @@ public class CoreService extends Service {
                     }
 
                 }
-//                int i = 0;
-//                Image image = null;
-//                while (true){
-//                    try {
-//                        Thread.sleep(200);
-//                        Log.e("byfmsg",String.valueOf(mImageReader.getMaxImages()));
-//                        image = mImageReader.acquireLatestImage();
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                        Log.e("byfmsg",e.getMessage());
-//                    }
-//                    if (image == null){
-//                        Log.e("byfmsg","CoreService,startget.image.null");
-//                    }else {
-//                        //处理图片
-//                        int width = image.getWidth();
-//                        int height = image.getHeight();
-//                        final Image.Plane[] planes = image.getPlanes();
-//                        final ByteBuffer buffer = planes[0].getBuffer();
-//                        int pixelStride = planes[0].getPixelStride();
-//                        int rowStride = planes[0].getRowStride();
-//                        int rowPadding = rowStride - pixelStride * width;
-//                        Bitmap bitmap = Bitmap.createBitmap(width + rowPadding / pixelStride, height, Bitmap.Config.ARGB_8888);
-//                        bitmap.copyPixelsFromBuffer(buffer);
-//                        //保存
-//                        File fileImage = null;
-//                        try {
-//                            fileImage = new File("/sdcard/","a"+String.valueOf(i)+".png");
-//                            if (!fileImage.exists()) {
-//                                fileImage.createNewFile();
-//                            }
-//                            FileOutputStream out = new FileOutputStream(fileImage);
-//                            bitmap.compress(Bitmap.CompressFormat.JPEG, 30, out);
-//                            out.flush();
-//                            out.close();
-//                            Intent media = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-//                            Uri contentUri = Uri.fromFile(fileImage);
-//                            media.setData(contentUri);
-//                            sendBroadcast(media);
-//
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                        image.close();
-//                        image = null;
-//                        i=i+1;
-//                        if (i>=20){
-//                            break;
-//                        }
-//                        Log.e("byfmsg","CoreService,startget.image.nonull:"+String.valueOf(i));
-//                    }
-//                }//while
 
             }
         }.start();
